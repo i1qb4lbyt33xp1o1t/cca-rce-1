@@ -1,0 +1,11 @@
+name: build
+on: [push]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run project checks
+        run: bash ./scripts/check.sh
